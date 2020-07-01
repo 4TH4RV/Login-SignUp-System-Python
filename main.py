@@ -192,12 +192,15 @@ def checkUserInfo(usernameA, passwordB):  # Checks the userinfo like password or
     if getLine:
         userinfo = f.readlines()[getLine - 1].split(";")
         if passwordB == userinfo[2].split(":")[1]:
+            f.close()
             return True
         else:
+            f.close()
             return False
     else:
+        f.close()
         return None
-    f.close()
+    
 
 
 def createAccount():  # creates an account in the database file
